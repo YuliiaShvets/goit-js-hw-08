@@ -55,7 +55,8 @@ const images = [
     ];
 
     const galleryContainer = document.querySelector('.gallery');
-    const galleryMarkup = images.map(({ preview, original, description }) => {
+    function addImages(item) {
+    return item.map(({ preview, original, description }) => {
   return `
   <li class="gallery-item">
   <a class="gallery-link" href="${original}">
@@ -68,9 +69,12 @@ const images = [
   </a>
 </li>
 `
-}).join('');
+})
+.join('');
+    };
 
-galleryContainer.innerHTML = galleryMarkup;
+    galleryContainer.innerHTML = addImages(images);
+  
 
 galleryContainer.addEventListener("click", onGalleryContainerClick);
 function onGalleryContainerClick(event) {
@@ -84,7 +88,7 @@ function onGalleryContainerClick(event) {
   console.log(largeImage); 
 }
 
-function onGalleryontainerClick(event) {
+function onGalleryContainerClick(event) {
     event.preventDefault();
   
     const galleryImage = event.target.classList.contains('gallery-image');
