@@ -79,17 +79,6 @@ const images = [
 galleryContainer.addEventListener("click", onGalleryContainerClick);
 function onGalleryContainerClick(event) {
     event.preventDefault();
-
-    const galleryImage = event.target.classList.contains('gallery-image');
-  if (!galleryImage) 
-    return;
-
-  const largeImage = event.target.dataset.source;
-  console.log(largeImage); 
-}
-
-function onGalleryContainerClick(event) {
-    event.preventDefault();
   
     const galleryImage = event.target.classList.contains('gallery-image');
     if (!galleryImage) 
